@@ -76,8 +76,8 @@ COEWU-AILAB/
 ├── ai-driven-stress-detection-system-using-physiological-signals/          # Stress detection project
 ├── explainable-ai-system-for-toddler-malnutrition-risk-prediction/     # Malnutrition prediction project
 ├── multi-factor-ultrafine-particle-concentration-optimization-prediction-and-its-application/   # PM0.1 forecasting project
-├── README.md             # Main documentation and project overview
-└── requirements.txt                 # Project dependencies
+├── README.md      # Main documentation and project overview
+└── requirements.txt     # Project dependencies
 ```
 ---
 
