@@ -4,7 +4,7 @@ This repository contains a collection of artificial intelligence projects focuse
 
 ## Projects Overview
 
-### 1. AI-Powered Stress Detection System
+### 1. An AI-driven Stress Detection System using Physiological Signals
 
 An intelligent system that combines artificial intelligence with physiological signal analysis to detect and monitor stress levels in real-time.
 
@@ -73,35 +73,11 @@ An advanced forecasting system designed to predict PM0.1 concentration levels fo
 
 ```
 environmental-health-ai-projects/
-├── stress-detection-system/          # Stress detection project
-├── malnutrition-risk-prediction/     # Malnutrition prediction project
-├── pm25-concentration-forecasting/   # PM2.5 forecasting project
-├── shared-utilities/                 # Common utilities and functions
-├── data/                            # Shared datasets
-├── docs/                            # Documentation
+├── ai-driven-stress-detection-system-using-physiological-signals/          # Stress detection project
+├── explainable-ai-system-for-toddler-malnutrition-risk-prediction/     # Malnutrition prediction project
+├── multi-factor-ultrafine-particle-concentration-optimization-prediction-and-its-application/   # PM0.1 forecasting project
 └── requirements.txt                 # Project dependencies
 ```
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Please read our contributing guidelines and submit pull requests for any improvements.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-For questions, suggestions, or collaborations, please reach out to:
-
-- Email: [your-email@example.com]
-- GitHub: [@yourusername]
-- LinkedIn: [Your LinkedIn Profile]
-
-## 🙏 Acknowledgments
-
-We thank all contributors, research institutions, and open-source communities that made these projects possible. Special recognition goes to the healthcare professionals and environmental scientists who provided domain expertise.
-
 ---
 
 **Note:** This repository serves as a comprehensive collection of AI-driven solutions for environmental and health monitoring. Each project is designed with robustness, reliability, and practical implementation in mind.
