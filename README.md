@@ -14,7 +14,7 @@ An intelligent system that combines artificial intelligence with physiological s
 - Multi-modal data integration
 - User-friendly monitoring interface
 
-### 2. Explainable AI for Child Malnutrition Risk Prediction
+### 2. Explainable AI system for toddler malnutrition risk prediction
 
 A prototype system that utilizes explainable artificial intelligence to predict malnutrition risk in young children, providing transparent and interpretable results for healthcare professionals.
 
@@ -24,7 +24,7 @@ A prototype system that utilizes explainable artificial intelligence to predict 
 - Evidence-based decision support
 - Healthcare professional dashboard
 
-### 3. PM0.1 Concentration Prediction System
+### 3. Multi-factor ultrafine particle (PM0.1) concentration optimization prediction and its application
 
 An advanced forecasting system designed to predict PM0.1 concentration levels for environmental monitoring and public health protection.
 
@@ -44,7 +44,7 @@ An advanced forecasting system designed to predict PM0.1 concentration levels fo
 
 ## 📋 Requirements
 
-- Python 3.8 or higher
+- Python 3.9 or higher
 - CUDA-compatible GPU (recommended)
 - Minimum 8GB RAM
 - Internet connection for data retrieval
@@ -72,7 +72,7 @@ An advanced forecasting system designed to predict PM0.1 concentration levels fo
 ## 📂 Repository Structure
 
 ```
-environmental-health-ai-projects/
+COEWU-AILAB/
 ├── ai-driven-stress-detection-system-using-physiological-signals/          # Stress detection project
 ├── explainable-ai-system-for-toddler-malnutrition-risk-prediction/     # Malnutrition prediction project
 ├── multi-factor-ultrafine-particle-concentration-optimization-prediction-and-its-application/   # PM0.1 forecasting project
