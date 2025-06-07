@@ -2,7 +2,7 @@
 
 This repository contains a collection of artificial intelligence projects focused on environmental monitoring and health assessment. Each project leverages cutting-edge AI technologies to address critical challenges in public health and environmental science.
 
-## Projects Overview
+## 🚀 Projects Overview
 
 ### 1. An AI-driven Stress Detection System using Physiological Signals
 
