@@ -1,6 +1,6 @@
 # Environmental & Health AI Projects
 
-This repository contains a collection of artificial intelligence projects focused on environmental monitoring and health assessment. Each project leverages cutting-edge AI technologies to address critical challenges in public health and environmental science.
+This repository contains a collection of artificial intelligence projects developed by COEWU-AILAB at Walailak University. Our research focuses on environmental monitoring and health assessment, leveraging cutting-edge AI technologies to address critical challenges in public health and environmental science.
 
 ## 🚀 Projects Overview
 
