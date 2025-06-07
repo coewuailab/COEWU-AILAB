@@ -53,8 +53,8 @@ An advanced forecasting system designed to predict PM0.1 concentration levels fo
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/environmental-health-ai-projects.git
-   cd environmental-health-ai-projects
+   git clone https://github.com/coewuailab/COEWU-AILAB.git
+   cd COEWU-AILAB
    ```
 
 2. **Install dependencies:**
