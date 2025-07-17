@@ -1,0 +1,710 @@
+/* globals.css - Cleaned Version (เหลือแค่ cascade-slide และสิ่งจำเป็น) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Custom Properties for Theming */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  /* Font families */
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-sarabun: 'Sarabun', sans-serif;
+  --font-numbers: 'Rubik', sans-serif;
+
+  /* Animation variables - เหลือแค่ cascade */
+  --cascade-duration: 500ms;
+  --cascade-delay: 80ms;
+
+  /* Color themes */
+  --primary-color: 59, 130, 246;
+  --success-color: 34, 197, 94;
+  --error-color: 239, 68, 68;
+  --warning-color: 245, 158, 11;
+
+  /* Animation easing - เหลือแค่ที่ใช้ */
+  --ease-cascade: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 17, 24, 39;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-end-rgb));
+}
+
+/* Enhanced Numbers Font Class */
+.font-numbers {
+  font-family: var(--font-numbers);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum', 'lnum';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Map styles */
+.info-box {
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* === CASCADE ANIMATIONS (ครบทั้งหมด) === */
+
+/* Cascade Slide In - ใช้อยู่ */
+@keyframes cascadeSlideIn {
+  0% {
+    transform: translateY(-120%) scale(0.7) rotateX(15deg);
+    opacity: 0;
+    filter: blur(3px);
+  }
+
+  30% {
+    transform: translateY(-20%) scale(1.05) rotateX(-5deg);
+    opacity: 0.7;
+    filter: blur(1px);
+  }
+
+  60% {
+    transform: translateY(15%) scale(1.15) rotateX(3deg);
+    opacity: 0.95;
+    filter: blur(0px);
+  }
+
+  80% {
+    transform: translateY(5%) scale(1.08) rotateX(-1deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  100% {
+    transform: translateY(0) scale(1) rotateX(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Cascade Fade In Out */
+@keyframes cascadeFadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.6);
+    filter: blur(4px);
+  }
+
+  15% {
+    opacity: 0.7;
+    transform: translateY(-8px) scale(1.05);
+    filter: blur(1px);
+  }
+
+  25% {
+    opacity: 0.9;
+    transform: translateY(-12px) scale(1.15);
+    filter: blur(0px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.08);
+    filter: blur(0px);
+  }
+
+  85% {
+    opacity: 0.8;
+    transform: translateY(-8px) scale(1.02);
+    filter: blur(0.5px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.7);
+    filter: blur(3px);
+  }
+}
+
+/* Cascade Flip In */
+@keyframes cascadeFlipIn {
+  0% {
+    transform: rotateX(90deg) scale(0.6) translateZ(-20px);
+    opacity: 0;
+    filter: blur(3px);
+  }
+
+  20% {
+    transform: rotateX(45deg) scale(0.8) translateZ(-10px);
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+
+  60% {
+    transform: rotateX(-15deg) scale(1.1) translateZ(5px);
+    opacity: 0.9;
+    filter: blur(0px);
+  }
+
+  80% {
+    transform: rotateX(5deg) scale(1.05) translateZ(2px);
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  100% {
+    transform: rotateX(0deg) scale(1) translateZ(0px);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Cascade Fade In */
+@keyframes cascadeFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(10px);
+    filter: blur(4px) brightness(0.8);
+  }
+
+  30% {
+    opacity: 0.6;
+    transform: scale(0.9) translateY(-2px);
+    filter: blur(2px) brightness(1.1);
+  }
+
+  60% {
+    opacity: 0.85;
+    transform: scale(1.2) translateY(-5px);
+    filter: blur(0px) brightness(1.3);
+  }
+
+  80% {
+    opacity: 0.95;
+    transform: scale(1.1) translateY(-2px);
+    filter: blur(0px) brightness(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+/* === UTILITY CLASSES สำหรับ CASCADE ANIMATIONS === */
+.animate-cascade-slide-in {
+  animation: cascadeSlideIn var(--cascade-duration) var(--ease-cascade);
+}
+
+.animate-cascade-fade-in-out {
+  animation: cascadeFadeInOut var(--cascade-duration) var(--ease-cascade);
+}
+
+.animate-cascade-flip-in {
+  animation: cascadeFlipIn 600ms var(--ease-cascade);
+}
+
+.animate-cascade-fade-in {
+  animation: cascadeFadeIn 450ms var(--ease-cascade);
+}
+
+/* Cascade Container */
+.cascade-container {
+  display: inline-flex;
+  align-items: baseline;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  contain: layout style paint;
+}
+
+/* Direction-aware Cascade */
+.cascade-left-to-right {
+  --direction-multiplier: 1;
+}
+
+.cascade-right-to-left {
+  --direction-multiplier: -1;
+}
+
+/* Cascade Delay Classes (เหลือแค่ที่ใช้) */
+.cascade-delay-0 {
+  animation-delay: calc(0 * var(--cascade-delay));
+}
+
+.cascade-delay-1 {
+  animation-delay: calc(1 * var(--cascade-delay));
+}
+
+.cascade-delay-2 {
+  animation-delay: calc(2 * var(--cascade-delay));
+}
+
+.cascade-delay-3 {
+  animation-delay: calc(3 * var(--cascade-delay));
+}
+
+.cascade-delay-4 {
+  animation-delay: calc(4 * var(--cascade-delay));
+}
+
+.cascade-delay-5 {
+  animation-delay: calc(5 * var(--cascade-delay));
+}
+
+.cascade-delay-6 {
+  animation-delay: calc(6 * var(--cascade-delay));
+}
+
+.cascade-delay-7 {
+  animation-delay: calc(7 * var(--cascade-delay));
+}
+
+.cascade-delay-8 {
+  animation-delay: calc(8 * var(--cascade-delay));
+}
+
+.cascade-delay-9 {
+  animation-delay: calc(9 * var(--cascade-delay));
+}
+
+/* Transform Effects */
+.transform-cascade {
+  transform: translateZ(0);
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  perspective: 1200px;
+  contain: layout style paint;
+}
+
+/* Performance Optimizations */
+.optimize-cascade {
+  contain: layout style paint;
+  will-change: transform, opacity, filter;
+  transform: translateZ(0);
+}
+
+/* === THEME SUPPORT === */
+.theme-default {
+  --theme-primary: var(--primary-color);
+  --theme-accent: var(--primary-color);
+}
+
+.theme-success {
+  --theme-primary: var(--success-color);
+  --theme-accent: var(--success-color);
+}
+
+.theme-error {
+  --theme-primary: var(--error-color);
+  --theme-accent: var(--error-color);
+}
+
+.theme-warning {
+  --theme-primary: var(--warning-color);
+  --theme-accent: var(--warning-color);
+}
+
+/* === LOADING STATES === */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  background-size: 200px 100%;
+}
+
+.cascade-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.cascade-loading .font-numbers {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(var(--theme-primary, var(--primary-color)), 0.1) 50%,
+      transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* === ERROR STATES === */
+.cascade-error .font-numbers {
+  color: rgb(var(--error-color));
+  text-shadow: 0 0 10px rgba(var(--error-color), 0.3);
+}
+
+/* === TRANSITIONS === */
+.blur-smooth {
+  transition: filter 0.3s var(--ease-smooth);
+}
+
+.scale-transition {
+  transition: transform 0.5s var(--ease-cascade);
+}
+
+/* === ACCESSIBILITY === */
+.cascade-container:focus-within {
+  outline: 2px solid rgba(var(--theme-primary, var(--primary-color)), 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .font-numbers {
+    text-shadow: none;
+    filter: none !important;
+  }
+
+  .animate-cascade-slide-in {
+    animation-duration: 0.2s;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-cascade-slide-in,
+  .animate-shimmer {
+    animation: none !important;
+  }
+
+  .cascade-delay-0,
+  .cascade-delay-1,
+  .cascade-delay-2,
+  .cascade-delay-3,
+  .cascade-delay-4,
+  .cascade-delay-5,
+  .cascade-delay-6,
+  .cascade-delay-7,
+  .cascade-delay-8,
+  .cascade-delay-9 {
+    animation-delay: 0ms !important;
+  }
+
+  .transform-cascade {
+    transform: none !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+
+  .animate-cascade-slide-in,
+  .animate-shimmer {
+    animation: none !important;
+  }
+
+  .font-numbers {
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+  }
+}
+
+/* === CHEVRON BAR ANIMATIONS (เพิ่มสำหรับ ChevronAirQualityBar) === */
+@keyframes chevronGlow {
+
+  0%,
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    transform: scale(1.02);
+  }
+}
+
+@keyframes bounceIndicator {
+
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  40%,
+  43% {
+    transform: translate(-50%, -8px);
+  }
+
+  70% {
+    transform: translate(-50%, -4px);
+  }
+
+  90% {
+    transform: translate(-50%, -2px);
+  }
+}
+
+.chevron-active {
+  animation: chevronGlow 2s ease-in-out infinite;
+}
+
+.animate-bounce-indicator {
+  animation: bounceIndicator 2s infinite;
+}
+
+/* === RESPONSIVE OPTIMIZATIONS === */
+@media (max-width: 768px) {
+  :root {
+    --cascade-duration: 300ms;
+    /* เร็วขึ้นใน mobile */
+    --cascade-delay: 50ms;
+  }
+}
+
+/* === BLUR UTILITIES === */
+.blur-0 {
+  filter: blur(0px);
+}
+
+.blur-1 {
+  filter: blur(1px);
+}
+
+.blur-2 {
+  filter: blur(2px);
+}
+
+.blur-3 {
+  filter: blur(3px);
+}
+
+.blur-4 {
+  filter: blur(4px);
+}
+
+/* === SCALE UTILITIES === */
+.scale-micro {
+  transform: scale(0.95);
+}
+
+.scale-small {
+  transform: scale(0.9);
+}
+
+.scale-normal {
+  transform: scale(1);
+}
+
+.scale-large {
+  transform: scale(1.1);
+}
+
+.scale-xl {
+  transform: scale(1.2);
+}
+
+.scale-2xl {
+  transform: scale(1.3);
+}
+
+/* เอฟเฟกต์พื้นฐานสำหรับการ์ด */
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.transition-all {
+  transition-property: all;
+}
+
+.hover\:shadow-lg:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* styles/global.css */
+.popup-slide {
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.popup-slide.center {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  z-index: 10;
+}
+
+.popup-slide.side {
+  opacity: 0.6;
+  transform: translateX(-50%) scale(0.9);
+  z-index: 5;
+}
+
+.popup-slide.far {
+  opacity: 0.3;
+  transform: translateX(-100%) scale(0.8);
+  z-index: 1;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 20;
+}
+
+.carousel-controls:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: white;
+  transform: scale(1.3);
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b6b, #ffa500);
+  transition: width 0.1s ease;
+  border-radius: 2px 2px 0 0;
+}
+
+.swipe-hint {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-controls {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .carousel-indicators {
+    bottom: 20px;
+  }
+
+  .swipe-hint {
+    font-size: 12px;
+    bottom: 60px;
+  }
+}
+
+.popup-slide {
+  animation: cascadeSlideIn var(--cascade-duration) var(--ease-cascade) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popup-slide {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* global.css */
+.chart-container {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.chart-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
