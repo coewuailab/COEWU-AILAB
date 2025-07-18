@@ -701,16 +701,20 @@ const SimpleChevronBar = () => {
   const levels = levelKeys.map((level, index) => {
     const prevThresholds = index > 0 ? {
       pc01: PM_THRESHOLDS?.PC01?.[levelKeys[index - 1]] || 0,
-      pm25: PM_THRESHOLDS?.PM?.[levelKeys[index - 1]] || 0, // Corrected typo from 'PM' to 'PM2.5'
+      pm25: PM_THRESHOLDS?.PM?.[levelKeys[index - 1]] || 0,
       pm10: PM_THRESHOLDS?.PM10?.[levelKeys[index - 1]] || 0,
-    } : { pc01: 0, pm25: 0, pm10: 0 };
+      hourlyMeanPC0_1: PM_THRESHOLDS?.HourlyMeanPC01?.[levelKeys[index - 1]] || 0,
+      dailyMeanPC0_1: PM_THRESHOLDS?.DailyMeanPC01?.[levelKeys[index - 1]] || 0,
+    } : { pc01: 0, pm25: 0, pm10: 0, hourlyMeanPC0_1: 0, dailyMeanPC0_1: 0 };
 
     return {
       label: level,
       color: getAirQualityColor(level),
       pc01: PM_THRESHOLDS?.PC01?.[level] || 0,
-      pm25: PM_THRESHOLDS?.PM?.[level] || 0, // Corrected typo
+      pm25: PM_THRESHOLDS?.PM?.[level] || 0,
       pm10: PM_THRESHOLDS?.PM10?.[level] || 0,
+      hourlyMeanPC0_1: PM_THRESHOLDS?.HourlyMeanPC01?.[level] || 0,
+      dailyMeanPC0_1: PM_THRESHOLDS?.DailyMeanPC01?.[level] || 0,
       ranges: {
         pc01: {
           min: prevThresholds.pc01,
@@ -718,11 +722,19 @@ const SimpleChevronBar = () => {
         },
         pm25: {
           min: prevThresholds.pm25,
-          max: PM_THRESHOLDS?.PM?.[level] || Infinity, // Corrected typo
+          max: PM_THRESHOLDS?.PM?.[level] || Infinity,
         },
         pm10: {
           min: prevThresholds.pm10,
           max: PM_THRESHOLDS?.PM10?.[level] || Infinity,
+        },
+        hourlyMeanPC0_1: {
+          min: prevThresholds.hourlyMeanPC0_1,
+          max: PM_THRESHOLDS?.HourlyMeanPC01?.[level] || Infinity,
+        },
+        dailyMeanPC0_1: {
+          min: prevThresholds.dailyMeanPC0_1,
+          max: PM_THRESHOLDS?.DailyMeanPC01?.[level] || Infinity,
         },
       },
     };
@@ -812,11 +824,18 @@ const SimpleChevronBar = () => {
                 <strong>PC0.1:</strong> {formatRange(selectedLevel.ranges.pc01.min, selectedLevel.ranges.pc01.max, 'PNC')}
               </div>
               <div className="text-lg text-gray-600 font-sarabun">
+                <strong>PC0.1 Hourly:</strong> {formatRange(selectedLevel.ranges.hourlyMeanPC0_1.min, selectedLevel.ranges.hourlyMeanPC0_1.max, 'PNC')}
+              </div>
+              <div className="text-lg text-gray-600 font-sarabun">
+                <strong>PC0.1 Daily:</strong> {formatRange(selectedLevel.ranges.dailyMeanPC0_1.min, selectedLevel.ranges.dailyMeanPC0_1.max, 'PNC')}
+              </div>
+              <div className="text-lg text-gray-600 font-sarabun">
                 <strong>PM2.5:</strong> {formatRange(selectedLevel.ranges.pm25.min, selectedLevel.ranges.pm25.max, 'μg/m³')}
               </div>
               <div className="text-lg text-gray-600 font-sarabun">
                 <strong>PM10:</strong> {formatRange(selectedLevel.ranges.pm10.min, selectedLevel.ranges.pm10.max, 'μg/m³')}
               </div>
+              
             </div>
             <div className="mt-8">
               <button onClick={closePopup} className="w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-lg transition-colors text-xl font-medium font-sarabun">

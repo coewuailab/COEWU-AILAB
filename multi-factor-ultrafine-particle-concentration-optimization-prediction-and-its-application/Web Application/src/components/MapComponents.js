@@ -1,9 +1,11 @@
 'use client'
 import { useEffect, useCallback, useRef, useState } from 'react'
 import { LOCATION_CONFIGS } from '../config/firebase-configs'
-// ค่าคงที่สำหรับพิกัดและการตั้งค่าแผนที่
-const WALAILAK_COORDS = [8.64437496101933, 99.89929488155569]
-const WALAILAK_C4 = [8.638222, 99.897976]
+
+// ตัวอย่างค่าคงที่สำหรับพิกัดและการตั้งค่าแผนที่
+const WALAILAK_COORDS = [8.64437496101933, 99.89929488155569] //ใส่พิกัดละติจูตและลองจิจูตของ Cafe Amazon สาขา ST
+const WALAILAK_C4 = [8.638222, 99.897976] //ใส่พิกัดละติจูตและลองจิจูตของอาคารวิชาการ 4
+
 const DEFAULT_ZOOM = 16.5
 const SEARCH_DELAY = 500
 const MIN_SEARCH_LENGTH = 3
